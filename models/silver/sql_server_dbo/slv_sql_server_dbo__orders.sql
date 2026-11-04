@@ -13,11 +13,10 @@ with cleaned_orders as (
         , order_cost_usd
         , total_order_cost_usd
         , order_status
-        , is_deleted
         , date_load
         , _loaded_at_utc
     from {{ ref('stg_sql_server_dbo__orders') }}
     where not is_deleted
-    qualify row_number() over (partition by address_id order by date_load desc) = 1
+    qualify row_number() over (partition by order_id order by date_load desc) = 1
 )
 select * from cleaned_orders
