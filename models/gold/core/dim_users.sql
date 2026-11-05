@@ -5,7 +5,6 @@ with users as(
 select
       user_id
     , first_name
-    , address_id
     , last_name
     , email
     , phone_number
