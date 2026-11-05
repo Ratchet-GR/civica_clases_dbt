@@ -1,5 +1,5 @@
 with cleaned_orders as (
-    select *
+    select 
         order_id
         , user_id
         , address_id
