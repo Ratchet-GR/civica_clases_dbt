@@ -141,3 +141,18 @@ models:
                 field: user_id
               config:
                 store_failures: true
+
+unit_tests:
+  - name: test_dim_products_categoriza_stock
+    model: dim_products
+    given:
+      - input: ref('slv_sql_server_dbo__products')
+        rows: 
+          - {inventory_units: 0}
+          - {inventory_units: 5}
+          - {inventory_units: 10}
+    expect:
+      rows:
+        - {stock_status: 'out_of_stock'}
+        - {stock_status: 'low_stock'}
+        - {stock_status: 'in_stock'}
