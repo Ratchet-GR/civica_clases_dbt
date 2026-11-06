@@ -18,6 +18,7 @@ models:
         description: Cantidad presupuestada
         data_tests:
           - not_null
+          - positive_values
       - name: budget_month
         description: Mes del presupuesto, casteado a date.
         data_tests:
