@@ -70,10 +70,16 @@ models:
         +materialized: view
         +schema: intermediate
       core:
+        +meta: 
+          owner: "antoniomgarciaverjaga@gmail.com"
         +schema: core
       marketing:
+        +meta: 
+          owner: "antoniomgarciaverjaga@gmail.com"
         +schema: marketing
       product:
+        +meta: 
+          owner: "antoniomgarciaverjaga@gmail.com"
         +schema: product
 
 # =============================================================================
