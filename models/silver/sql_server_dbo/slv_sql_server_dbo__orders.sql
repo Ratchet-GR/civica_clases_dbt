@@ -1,16 +1,16 @@
 with cleaned_orders as (
-    select *
+    select 
         order_id
         , user_id
         , address_id
         , promo_id
         , created_at_utc
-        , stimated_delivery_at_utc
+        , estimated_delivery_at_utc
         , delivered_at_utc
         , tracking_id
         , shipping_service
         , shipping_cost_usd
-        , order_cost_usd
+        , item_order_cost_usd
         , total_order_cost_usd
         , order_status
         , date_load
