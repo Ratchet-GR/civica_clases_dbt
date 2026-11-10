@@ -17,6 +17,7 @@ cleaned as (
         , date_load
     from budget
     where quantity_budgeted is not null
+        and budget_month >= '{{ var("budget_start_date") }}'
     qualify row_number() over (partition by budget_id order by date_load desc) = 1
 )
 
