@@ -46,7 +46,7 @@ models:
     staging:
       +tags: ['staging']
       +materialized: view
-      +database: "{{ env_var('DBT_BRONZE_DB') }}"
+      +database: "{{ env_var('DBT_SILVER_DB') }}"
       sql_server_dbo:
         +schema: sql_server_dbo
       google_sheets:
