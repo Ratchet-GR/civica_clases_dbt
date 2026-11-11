@@ -6,7 +6,7 @@ renamed as (
         user_id
         , first_name
         , last_name
-        , email
+        , trim(lower(email)) as email
         , phone_number
         , address_id
         , created_at as created_at_utc
