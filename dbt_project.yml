@@ -46,7 +46,7 @@ models:
     staging:
       +tags: ['staging']
       +materialized: view
-      +database: DEV_BRONZE_DB
+      +database: "{{ env_var('DBT_BRONZE_DB') }}"
       sql_server_dbo:
         +schema: sql_server_dbo
       google_sheets:
@@ -57,7 +57,7 @@ models:
     silver:
       +tags: ['silver']
       +materialized: table
-      +database: DEV_SILVER_DB
+      +database: "{{ env_var('DBT_SILVER_DB') }}"
       sql_server_dbo:
         +schema: sql_server_dbo
       google_sheets:
@@ -68,7 +68,7 @@ models:
     gold:
       +tags: ['gold']
       +materialized: table
-      +database: DEV_GOLD_DB
+      +database: "{{ env_var('DBT_GOLD_DB') }}"
       intermediate:
         +materialized: view
         +schema: intermediate
@@ -94,7 +94,7 @@ models:
 # Van a Silver y no a Bronze: Bronze solo la escribe la herramienta de ingesta.
 seeds:
   curso_data_engineering:
-    +database: DEV_SILVER_DB
+    +database: "{{ env_var('DBT_SILVER_DB') }}"
     +schema: seeds
     country_codes:
       # Tipos explícitos para que dbt no los infiera del CSV
@@ -110,7 +110,7 @@ seeds:
 # la historia y no se puede reconstruir desde Bronze.
 snapshots:
   curso_data_engineering:
-    +database: DEV_SILVER_DB
+    +database: "{{ env_var('DBT_SILVER_DB') }}"
     +schema: snapshots
     +transient: false
 
