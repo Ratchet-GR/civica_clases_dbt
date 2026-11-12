@@ -21,7 +21,6 @@ final as (
         , delivered_at_utc
         , days_to_deliver
         , date_load
-        , cacopelao
     from orders
 )
 
