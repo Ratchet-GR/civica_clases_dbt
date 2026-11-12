@@ -82,6 +82,8 @@ models:
         +schema: core
         +group: core
         +access: public
+        +grants:
+          select: ['REPORTING_ROLE']
 
       marketing:
         +tags: ['marketing']
@@ -90,12 +92,18 @@ models:
         +schema: marketing
         +group: marketing
         +access: public
+        +grants:
+          select: ['REPORTING_ROLE']
 
       product:
         +tags: ['product']
         +meta: 
           owner: "antoniomgarciaverjaga@gmail.com"
         +schema: product
+        +group: product
+        +access: public
+        +grants:
+          select: ['REPORTING_ROLE']
 
 # =============================================================================
 # Seeds
