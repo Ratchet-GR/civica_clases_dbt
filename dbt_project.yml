@@ -69,19 +69,28 @@ models:
       +tags: ['gold']
       +materialized: table
       +database: "{{ env_var('DBT_GOLD_DB') }}"
+
       intermediate:
         +materialized: view
         +schema: intermediate
+        +group: marketing
+
       core:
         +tags: ['core']
         +meta: 
           owner: "antoniomgarciaverjaga@gmail.com"
         +schema: core
+        +group: core
+        +access: public
+
       marketing:
         +tags: ['marketing']
         +meta: 
           owner: "antoniomgarciaverjaga@gmail.com"
         +schema: marketing
+        +group: marketing
+        +access: public
+
       product:
         +tags: ['product']
         +meta: 
