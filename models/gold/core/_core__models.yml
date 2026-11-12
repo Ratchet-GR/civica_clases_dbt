@@ -139,8 +139,8 @@ models:
               arguments:
                 to: ref('dim_users')
                 field: user_id
-              config:
-                store_failures: true
+              #config:
+              #  store_failures: true   ---Preguntar---
 
 unit_tests:
   - name: test_dim_products_categoriza_stock

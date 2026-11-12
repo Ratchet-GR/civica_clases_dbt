@@ -3,7 +3,7 @@ with cleaned_users as (
         user_id
         , first_name
         , last_name
-        , email
+        , lower(trim(email)) as email
         , phone_number
         , address_id
         , created_at_utc
